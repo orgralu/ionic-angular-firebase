@@ -1,0 +1,45 @@
+
+<ion-content padding>
+  <h2 class="ion-text-center">Nombre</h2>
+  <ion-list lines="full">
+      <ion-item *ngIf="estudiante">
+        <ion-input required type="text" placeholder="Materia" [(ngModel)]="estudiante.nombre">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="estudiante">
+        <ion-input required type="text" placeholder="Materia" [(ngModel)]="estudiante.apellido">
+        </ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-button expand="full" color="success" (click)="saveMateria()">Actualizar</ion-button>
+  <h2 class="ion-text-center">Notas del estudiante</h2>
+  <ion-list lines="full">
+    <ion-item *ngIf="estudiante">
+      <ion-input required type="text" placeholder="Primero corte" [(ngModel)]="estudiante.primero">
+      </ion-input>
+      <span>30%</span>
+    </ion-item>
+    <ion-item *ngIf="estudiante">
+      <ion-input required type="text" placeholder="Segundo corte" [(ngModel)]="estudiante.segundo">
+      </ion-input>
+      <span>30%</span>
+    </ion-item>
+    <ion-item *ngIf="estudiante">
+      <ion-input required type="text" placeholder="Tercer corte" [(ngModel)]="estudiante.tercero">
+      </ion-input>
+      <span>40%</span>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" color="success" (click)="saveNotas()">Actualizar Notas</ion-button>
+  <h3 class="ion-text-center">Total de la nota: {{(estudiante.primero*0.3) + (estudiante.segundo*0.3) + (estudiante.tercero*0.4)}}</h3>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" routerLink="/estudiante" routerDirection="forward" (click)="onRemove(estudianteId)">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab vertical="bottom" slot="fixed" color="danger">
+    <ion-fab-button color="primary" routerLink="/estudiante" routerDirection="forward">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Agregar Estudiante</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="ion-text-center">Datos estudiante</h2>
+  <ion-list lines="full">
+      <ion-input required type="text" placeholder="Nombre" [(ngModel)]="estudiante.nombre">
+      </ion-input>
+  </ion-list>
+  <ion-list lines="full">
+    <ion-input required type="text" placeholder="Apellido" [(ngModel)]="estudiante.apellido">
+    </ion-input>
+  </ion-list>
+  <ion-list lines="full">
+    <ion-input *ngIf!="" required type="text" placeholder="Materia" [(ngModel)]="estudiante.materia" >
+    </ion-input>
+  </ion-list>
+  <ion-button expand="full" color="success" (click)="saveEstudiante()">Guardar</ion-button>
+</ion-content>

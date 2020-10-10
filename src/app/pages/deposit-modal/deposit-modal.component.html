@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Agregar Materia</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Cerrar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="ion-text-center">Nombre</h2>
+  <ion-list lines="full">
+      <ion-item *ngIf="todo">
+        <ion-input required type="text" placeholder="Materia" [(ngModel)]="todo.materia">
+        </ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-button expand="full" color="success" (click)="saveMateria()">Guardar</ion-button>
+</ion-content>
